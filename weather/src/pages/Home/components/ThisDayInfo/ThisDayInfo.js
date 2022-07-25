@@ -31,7 +31,7 @@ const ThisDayInfo = () => {
                 })}
             </div>
 
-            <img className={s.cloud__img} src={cloud} alt="хмарка" />
+            <img className="cloud__img" src={cloud} alt="хмарка" />
         </div>
     );
 };
