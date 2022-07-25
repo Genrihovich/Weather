@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return (
-        <div className={s.header}>
+        <header className={s.header}>
             <div className={s.wrapper}>
                 <div className={s.logo}><GlobalSvgSelector id="header-logo" /></div>
                 <div className={s.title}>React Weather</div>
@@ -36,7 +36,7 @@ const Header = () => {
                     options={options}
                 />
             </div>
-        </div>
+        </header>
     )
 }
 
