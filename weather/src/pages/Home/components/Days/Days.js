@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Days.module.scss';
 import { Card } from './Card';
+import { Tabs } from './Tabs';
 
 
 const Days = () => {
@@ -63,11 +64,14 @@ const Days = () => {
         },
     ];
     return (
-        <div className={s.days}>
-            {days.map((itemDay) => (
-                <Card cardDay={itemDay} key={itemDay.day} />
-            ))}
-        </div>
+        <>
+            <Tabs />
+            <div className={s.days}>
+                {days.map((itemDay) => (
+                    <Card cardDay={itemDay} key={itemDay.day} />
+                ))}
+            </div>
+        </>
     )
 }
 

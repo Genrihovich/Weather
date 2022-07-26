@@ -2,12 +2,23 @@ import React from 'react';
 import s from './Days.module.scss';
 
 
-const Tabs = () => {
+export const Tabs = () => {
+    const tab = [{
+        value: 'На тиждень'
+    }, {
+        value: 'На 10 днів'
+    }, {
+        value: 'На місяць'
+    },
+    ]
     return (
         <div className={s.tabs}>
-
+            <div className={s.tabs__wrapper}>
+                {tab.map((tab) => {
+                    return <div className={s.tab + ' ' + s.active} key={tab.value}>{tab.value}</div>
+                })}
+            </div>
+            <div className={s.cansel}>Відмінити</div>
         </div>
     )
 }
-
-export default Tabs;
