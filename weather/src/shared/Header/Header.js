@@ -13,7 +13,8 @@ const Header = () => {
     const colourStyles = {
         control: (styles) => ({
             ...styles,
-            backgroundColor: 'rgba(71,147,255,0.2)',
+            backgroundColor: 0 ? '#4f4f4f' : 'rgba(71,147,255,0.2)',
+            //будет название темы
             width: '194px',
             height: '37px',
             border: 'none',
@@ -29,7 +30,9 @@ const Header = () => {
                 <div className={s.title}>React Weather</div>
             </div>
             <div className={s.wrapper}>
-                <div className={s.change_theme}><GlobalSvgSelector id="change_theme" /></div>
+                <div className={s.change_theme}>
+                    <GlobalSvgSelector id="change-theme" />
+                </div>
                 <Select
                     defaultValue={options[0]}
                     styles={colourStyles}
