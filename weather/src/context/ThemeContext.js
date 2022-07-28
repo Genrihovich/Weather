@@ -1,13 +1,13 @@
 import { createContext } from "react";
 
-// export enum Themep {
-//     LIGHT = 'light',
-//     DARK = 'dark',
-// }
+export const ThemeEnum = {
+    LIGHT: 'light',
+    DARK: 'dark',
+}
 
 
 
 export const ThemeContext = createContext({
-    theme: '',
+    theme: ThemeEnum.LIGHT,
     changeTheme: () => { },
 })

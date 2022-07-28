@@ -1,4 +1,6 @@
 //функція робить логіку з Header-a
+
+
 export function changeSCCRootVariables(theme) {
     const root = document.querySelector(':root');
 

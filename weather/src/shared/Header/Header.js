@@ -3,6 +3,7 @@ import s from './Header.module.scss';
 import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector';
 import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
+import { ThemeEnum } from '../../context/ThemeContext';
 
 const Header = () => {
     const theme = useTheme();
@@ -18,7 +19,7 @@ const Header = () => {
     const colourStyles = {
         control: (styles) => ({
             ...styles,
-            backgroundColor: theme.theme === 'dark' ? '#4f4f4f' : 'rgba(71,147,255,0.2)',
+            backgroundColor: theme.theme === ThemeEnum.DARK ? '#4f4f4f' : 'rgba(71,147,255,0.2)',
             //будет название темы
             width: '194px',
             height: '37px',
@@ -28,16 +29,13 @@ const Header = () => {
         }),
         singleValue: (styles) => ({
             ...styles,
-            color: theme.theme === 'dark' ? '#fff' : '#000',
+            color: theme.theme === ThemeEnum.DARK ? '#fff' : '#000',
         }),
     }
 
-
-
-
     function changeTheme() {
         //   setTheme(theme === 'light' ? 'dark' : 'light');
-        theme.changeTheme(theme.theme === 'light' ? 'dark' : 'light');
+        theme.changeTheme(theme.theme === ThemeEnum.LIGHT ? ThemeEnum.DARK : ThemeEnum.LIGHT);
     }
 
     return (
