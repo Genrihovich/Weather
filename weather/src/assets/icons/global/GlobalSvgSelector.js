@@ -107,6 +107,7 @@ export const GlobalSvgSelector = ({ id }) => {
                     </defs>
                 </svg>
             );
+
         case 'small_rain':
             return (
                 <svg
@@ -154,6 +155,7 @@ export const GlobalSvgSelector = ({ id }) => {
                     </defs>
                 </svg>
             );
+
         case 'small_rain_sun':
             return (
                 <svg
@@ -300,6 +302,7 @@ export const GlobalSvgSelector = ({ id }) => {
                     </defs>
                 </svg>
             );
+
         case 'close':
             return (
                 <svg
@@ -322,7 +325,5 @@ export const GlobalSvgSelector = ({ id }) => {
 
         default:
             return null;
-
     }
-
 }
