@@ -7,6 +7,8 @@ import { Popup } from './shared/Header/Popup/Popup';
 
 
 function App() {
+
+
   return (
     <div className="global-container">
       {/* <Popup /> */}

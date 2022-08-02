@@ -4,6 +4,7 @@ import { GlobalSvgSelector } from '../../../../assets/icons/global/GlobalSvgSele
 
 
 const ThisDay = () => {
+    //   console.log(props.data);
     return (
         <div className={s.this__day}>
             <div className={s.top__block}>

@@ -6,6 +6,7 @@ import ThisDay from './ThisDay/ThisDay';
 import ThisDayInfo from './ThisDayInfo/ThisDayInfo';
 
 export const Home = () => {
+    //  const data = props.data
     return (
         <div className={s.home}>
             <div className={s.wrapper}>
