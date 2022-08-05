@@ -38,6 +38,10 @@ const Header = () => {
         theme.changeTheme(theme.theme === ThemeEnum.LIGHT ? ThemeEnum.DARK : ThemeEnum.LIGHT);
     }
 
+    const handleChange = (selectedOption) => {
+        console.log("handleChange", selectedOption);
+    }
+
     return (
         <header className={s.header}>
             <div className={s.wrapper}>
@@ -52,6 +56,7 @@ const Header = () => {
                     defaultValue={options[0]}
                     styles={colourStyles}
                     options={options}
+                    onChange={handleChange}
                 />
             </div>
         </header>
