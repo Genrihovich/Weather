@@ -3,8 +3,10 @@ import s from './ThisDay.module.scss';
 import { GlobalSvgSelector } from '../../../../assets/icons/global/GlobalSvgSelector';
 
 
-const ThisDay = () => {
-    //   console.log(props.data);
+function ThisDay(props) {
+    //  const myWetherData = myWeather
+    console.log('ThisDay', props.city);
+
     return (
         <div className={s.this__day}>
             <div className={s.top__block}>
@@ -16,7 +18,7 @@ const ThisDay = () => {
             </div>
             <div className={s.bottom__block}>
                 <div className={s.this__time}>Час: <span>23:54</span></div>
-                <div className={s.this__city}>Місто: <span>Київ</span></div>
+                <div className={s.this__city}>Місто: <span>{props.city}</span></div>
             </div>
         </div>
     )

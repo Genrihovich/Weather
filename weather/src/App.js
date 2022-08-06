@@ -3,26 +3,42 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home/components/Home';
 import { MonthStatistics } from './pages/MonthStatistics/components/MonthStatistics';
 import Header from './shared/Header/Header';
-import { Popup } from './shared/Header/Popup/Popup';
+//import { Popup } from './shared/Header/Popup/Popup';
 
 
-function App() {
+export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = ({
+      city: 'Київ'
+    })
+    this.changeSelectCity = this.changeSelectCity.bind(this);
+  }
 
+  changeSelectCity = (value) => {
+    this.setState({
+      city: value
+    })
+    console.log('Місто вибране', value);
+  }
 
-  return (
-    <div className="global-container">
-      {/* <Popup /> */}
-      <div className="container">
+  render() {
+    return (
+      <div className="global-container">
+        {/* <Popup /> */}
+        <div className="container">
 
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/month-statistics" element={<MonthStatistics />} />
-        </Routes>
+          {/* <Header onCityChange={this.changeSelectCity} city={this.state.city} /> */}
+          <Header onCityChange={this.changeSelectCity} />
+          <Routes>
+            <Route path="/" element={<Home city={this.state.city} />} />
+            <Route path="/month-statistics" element={<MonthStatistics />} />
+          </Routes>
 
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

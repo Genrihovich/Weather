@@ -5,7 +5,9 @@ import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
 import { ThemeEnum } from '../../context/ThemeContext';
 
-const Header = () => {
+
+function Header(props) {
+
     const theme = useTheme();
 
     const options = [
@@ -13,8 +15,6 @@ const Header = () => {
         { value: 'city-2', label: 'Хмельницький' },
         { value: 'city-3', label: 'Меджибож' }
     ];
-
-    //   const [theme, setTheme] = useState('light');
 
     const colourStyles = {
         control: (styles) => ({
@@ -39,8 +39,10 @@ const Header = () => {
     }
 
     const handleChange = (selectedOption) => {
-        console.log("handleChange", selectedOption);
+        //   console.log("handleChange", selectedOption.label);
+        props.onCityChange(selectedOption.label)
     }
+
 
     return (
         <header className={s.header}>

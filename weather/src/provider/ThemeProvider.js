@@ -7,10 +7,6 @@ import { storage } from "../model/Storage";
 
 export const ThemeProvider = ({ children, ...props }) => {
 
-
-
-
-
     const [theme, setTheme] = useState(
         storage.getItem('theme') || ThemeEnum.LIGHT
     );
@@ -19,7 +15,7 @@ export const ThemeProvider = ({ children, ...props }) => {
 
     function changeTheme(theme) {
         storage.setItem('theme', theme);
-        console.log('changeTheme - ' + theme);
+        // console.log('changeTheme - ' + theme);
         setTheme(theme);
         changeSCCRootVariables(theme);
     }
