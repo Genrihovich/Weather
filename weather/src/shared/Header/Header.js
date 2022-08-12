@@ -13,7 +13,7 @@ function Header(props) {
     const options = [
         { value: 'city-1', label: 'Київ' },
         { value: 'city-2', label: 'Хмельницький' },
-        { value: 'city-3', label: 'Меджибож' }
+        { value: 'city-3', label: 'Меджибіж' }
     ];
 
     const colourStyles = {

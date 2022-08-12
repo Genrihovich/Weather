@@ -4,7 +4,8 @@ import cloud from '../../../../assets/images/cloud.png';
 import { ThisDayItem } from './ThisDayItem';
 
 
-const ThisDayInfo = () => {
+function ThisDayInfo(props) {
+    console.log('ThisDayInfo', props);
     const items = [{
         icon_id: 'temp',
         name: 'Температура',
@@ -22,6 +23,11 @@ const ThisDayInfo = () => {
         name: 'Вітер',
         value: '3 м/с південно-західний - легкий вітер',
     },];
+    // let eee = items[0].value;
+    items[0].value = Math.round(props.data.main.temp) + '° - відчувається як ' + Math.round(props.data.main.feels_like) + '°'
+    items[1].value = Math.round(props.data.main.pressure * 0.75006156) + ' мм ртутного стовпа'
+    items[2].value = props.data.weather[0].description
+    items[3].value = props.data.wind.speed + ' м/c'
 
     return (
         <div className={s.this__day_info}>
